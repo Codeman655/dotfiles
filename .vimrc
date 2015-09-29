@@ -31,20 +31,29 @@
 " ...
 
 call plug#begin('~/.vim/plugged')
-"Plug 'https://bitbucket.org/ns9tks/vim-l9'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-speeddating'
 Plug 'Lokaltog/vim-easymotion'
-"Plug 'tpope/vim-rails.git'
-"Plug 'Valloric/YouCompleteMe'
 Plug 'rstacruz/sparkup'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-markdown'
-"Plug 'vim-scripts/FuzzyFinder'
-Plug 'hsitz/VimOrganizer'
 Plug 'vim-scripts/Syntastic'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-easy-align'
+Plug 'davidhalter/jedi-vim'
+Plug 'jceb/vim-orgmode'
+Plug 'vim-scripts/utl.vim'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'wincent/command-t'
+Plug 'bling/vim-airline'
+"Unused
+"Plug 'https://bitbucket.org/ns9tks/vim-l9'
+"Plug 'tpope/vim-rails.git'
+"Plug 'Valloric/YouCompleteMe'
+"Plug 'vim-scripts/FuzzyFinder'
+"Plug 'hsitz/VimOrganizer'
+
 
 
 call plug#end()
@@ -80,7 +89,7 @@ set infercase               " Try to adjust insert completions for case.
  "au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 "augroup END "For manual and indent folding
 set foldmethod=indent " By default, use syntax to determine folds
-set foldlevelstart=99       " All folds open by default
+set foldlevelstart=99 " All folds open by default
 " set foldcolumn=1            " A visual indicator for folds
 
 """" Text Formatting
@@ -99,13 +108,13 @@ set showcmd                 " Show incomplete normal mode commands as I type.
 set report=0                " : commands always print changed line count.
 set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
 set ruler                   " Show some info, even without statuslines.
-"set laststatus=2            " Always show statusline, even if only 1 window.
+set laststatus=2            " Always show statusline, even if only 1 window.
 
 """" Tabs/Indent Levels
 set autoindent              " Do dumb autoindentation when no filetype is set
 set tabstop=4               " Real tab characters are 8 spaces wide,
-set shiftwidth=2            " but an indent level is 2 spaces wide.
-set softtabstop=2           " <BS> over an autoindent deletes both spaces.
+set shiftwidth=4            " but an indent level is 2 spaces wide.
+set softtabstop=4          " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 
 """" Tags
@@ -131,6 +140,10 @@ set wildmode=full           " <Tab> cycles between all matching choices.
 set updatetime=2000         " Write swap files after 2 seconds of inactivity.
 set directory^=~/.backup//  " Swap files are also written to ~/.backup, too.
 
+"""" Timeout Length
+set ttimeoutlen=50
+set encoding=utf-8
+
 """" Set the mouse
 ""set mouse=a
 
@@ -154,12 +167,29 @@ vnoremap <space> zf
 " Turn off annoyhing search highlights AFTER I've searched by pressing <esc>
 "nnoremap <esc> :noh<return><esc>
 
-au! BufRead,BufWrite,BufWritePost,BufNewFile *.org 
-au BufEnter *.org            call org#SetOrgFileType()
+"au! BufRead,BufWrite,BufWritePost,BufNewFile *.org 
+"au BufEnter *.org            call org#SetOrgFileType()
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
 nmap <Leader>a <Plug>(EasyAlign)
-"
+
+" Set up simple left and right browsing in buffers/tabs 
+nnoremap <silent> <C-h> :bprevious <cr>
+nnoremap <silent> <C-l> :bnext <cr>
+
+" Set up vim-airline configs
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = "solarized"
+let g:airline_left_sep = ""
+let g:airline_right_sep = ""
+
+"Set localleader for vim-orgmode
+let mapleader = ","
+":let maplocalleader = "-"
+
+"make backspace work like most other applications
+set backspace=2 
