@@ -37,6 +37,12 @@ plugins=(rails git ruby github)
 
 source $ZSH/oh-my-zsh.sh
 
+#Custom Functions
+function notes {
+    tmux selectp -t 0
+    tmux splitw -h -l 80 "vim ~/Documents/notes.org"
+}
+
 # Customize to your needs...
 export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/texbin:$HOME/bin
 export JAVA_HOME=`/usr/libexec/java_home`
