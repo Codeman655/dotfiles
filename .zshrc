@@ -37,8 +37,10 @@ plugins=(rails git ruby github)
 
 source $ZSH/oh-my-zsh.sh
 
+
 # Customize to your needs...
 export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/texbin:$HOME/bin
+export NOTES='~/Documents/notes/notes.org'
 export JAVA_HOME=`/usr/libexec/java_home`
 #alias vim=$HOME/bin/vim
 alias query-rd="ldapsearch -LLL -h ldap -x -b 'ou=rd,o=asig,dc=cisco,dc=com'"
@@ -49,6 +51,7 @@ alias pbcopy="reattach-to-user-namespace pbcopy"
 alias open="reattach-to-user-namespace open"
 alias ghi='TERM=xterm-256color ghi'
 alias be='bundle exec'
+alias vim-geeknote='vi -c Geeknote'
 
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
@@ -64,3 +67,20 @@ export "ASIG_TEMPLATES_REPO"="/Users/chricrai/Documents/asig-templates"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/opt/chefdk/bin:/opt/chefdk/embedded/bin" # Add RVM to PATH for scripting
+
+#Custom Functions
+function notes {
+  tmux selectp -t 0
+  tmux splitw -h -l 80 "vim $NOTES"
+  tmux select-pane -t 0
+}
+
+function note-sync {
+  if [[ -e $(which geeknote) ]] then
+      geeknote edit  --content $NOTES --note "ORNL Notes"
+  else
+      echo "Geeknote is not installed..."
+  fi
+
+  
+}
