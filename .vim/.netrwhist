@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/codeman655/.oh-my-zsh/custom'
-let g:netrw_dirhist_2='/Users/chricrai/.oh-my-zsh/custom/example'
-let g:netrw_dirhist_3='/Users/chricrai/Documents/Code/Matasano/eight'
-let g:netrw_dirhist_4='/Users/chricrai/.vim/bundle/vim-orgmode/doc'
-let g:netrw_dirhist_5='/Users/chricrai/Documents/Code/Matasano'
-let g:netrw_dirhist_6='/Users/chricrai/Documents/Blog/octopress/.git'
-let g:netrw_dirhist_7='/Users/chricrai/.ssh'
-let g:netrw_dirhist_8='/Users/chricrai/Documents/CTF/CSAW/game-of-life-ruby/spec'
-let g:netrw_dirhist_9='/Users/chricrai/Documents/Blog/octopress/source/_includes/custom'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/chricrai/Documents/ASIG-IT/mailman_server/mailman/config'
+let g:netrw_dirhist_2='/Users/chricrai/.ssh'
+let g:netrw_dirhist_3='/Users/chricrai/Documents/Code/Ruby/GEN'
+let g:netrw_dirhist_4='/Users/chricrai/Documents/SSMinnow/uc-connector/uc-connector-service/client'

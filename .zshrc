@@ -37,36 +37,35 @@ plugins=(rails git ruby github)
 
 source $ZSH/oh-my-zsh.sh
 
+
+alias ctags=/usr/local/bin/ctags
+alias pbcopy="reattach-to-user-namespace pbcopy"
+alias open="reattach-to-user-namespace open"
+alias ghi='TERM=xterm-256color ghi'
+alias be='bundle exec'
+#alias tmux="TERM=screen-256color-bce tmux"
+#alias vim=$HOME/bin/vim
+
+# Customize to your needs...
+export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/texbin:$HOME/bin
+export JAVA_HOME=`/usr/libexec/java_home`
+
+export LESS='-R'
+export LESSOPEN='|~/.lessfilter %s'
+export "VAGRANT_VCENTER"="Production"
+export "ASIG_TEMPLATES_REPO"="/Users/chricrai/Documents/asig-templates"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:/opt/chefdk/bin:/opt/chefdk/embedded/bin" # Add RVM to PATH for scripting
+
 #Custom Functions
 function notes {
     tmux selectp -t 0
     tmux splitw -h -l 80 "vim ~/Documents/notes.org"
 }
 
-# Customize to your needs...
-export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/texbin:$HOME/bin
-export JAVA_HOME=`/usr/libexec/java_home`
-#alias vim=$HOME/bin/vim
-alias query-rd="ldapsearch -LLL -h ldap -x -b 'ou=rd,o=asig,dc=cisco,dc=com'"
-alias query-groups="ldapsearch -LLL -h ldap -x -b 'ou=groups,ou=rd,o=asig,dc=cisco,dc=com'"
-alias query-aliases="ldapsearch -LLL -h ldap -x -b 'ou=emailAliases,ou=rd,o=asig,dc=cisco,dc=com'"
-alias ctags=/usr/local/bin/ctags
-alias pbcopy="reattach-to-user-namespace pbcopy"
-alias open="reattach-to-user-namespace open"
-alias ghi='TERM=xterm-256color ghi'
-alias be='bundle exec'
-
-export LESS='-R'
-export LESSOPEN='|~/.lessfilter %s'
+#Dead options
 #export TAPDIR=$(brew --repo)/Library/Taps
 #export TERM=xterm-256color
-export "VAGRANT_VCENTER"="Production"
-export "ASIG_TEMPLATES_REPO"="/Users/chricrai/Documents/asig-templates"
-
 #export CLASSPATH=/usr/local/Cellar/ivy/2.3.0/libexec/ivy-2.3.0.jar
 #export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/MacGPG2/bin:/Users/chricrai/bin:/usr/texbin
 #export BACKUPHOME=/Volumes/Time\ Machine\ Backups/Backups.backupdb/Chris\ Craig’s\ MacBook\ Pro/2012-08-01-084625/Macintosh\ HD/Users/chricrai
-#alias tmux="TERM=screen-256color-bce tmux"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:/opt/chefdk/bin:/opt/chefdk/embedded/bin" # Add RVM to PATH for scripting
