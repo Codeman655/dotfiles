@@ -1,0 +1,23 @@
+[user]
+  name = chricrai
+  email = chricrai@cisco.com
+[alias]
+  vlog = log --graph --date-order --date=relative --pretty=format:\"%C(white)%h: %Cgreen - %an - %C(cyan)%ar: %C(red)%d%Creset%n%s%n\" --color
+  hist = log --graph --date-order --date=relative --pretty=format:\"%C(white)%h: %Cgreen - %an - %C(cyan)%ar: %C(red)%d%Creset%n%s%n\" --color -p current..master
+  cam = commit -a -m
+[push]
+  default = simple
+[core]
+  editor = /Users/chricrai/bin/vim
+[github]
+  user = chricrai
+  host = github.asig.cisco.com
+[ghi]
+  editor = vim
+  token = !security find-internet-password -a chricrai -s github.com -l 'ghi token' -w
+[ghi "highlight"]
+  style = colorful
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+  prompt = false
