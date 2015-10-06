@@ -47,7 +47,10 @@ Plug 'vim-scripts/utl.vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'wincent/command-t'
 Plug 'bling/vim-airline'
+Plug 'neilagabriel/vim-geeknote'
+
 "Unused
+"Plug 'bling/vim-bufferline'
 "Plug 'https://bitbucket.org/ns9tks/vim-l9'
 "Plug 'tpope/vim-rails.git'
 "Plug 'Valloric/YouCompleteMe'
@@ -181,11 +184,13 @@ nnoremap <silent> <C-h> :bprevious <cr>
 nnoremap <silent> <C-l> :bnext <cr>
 
 " Set up vim-airline configs
+let g:airline_left_sep = ">"
+let g:airline_right_sep = ">"
+let g:airline_theme="hybridline"
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = "solarized"
-let g:airline_left_sep = ""
-let g:airline_right_sep = ""
+let g:airline#extensions#tabline#left_sep = '|'
+let g:airline#extensions#tabline#right_sep = '|'
 
 "Set localleader for vim-orgmode
 let mapleader = ","
