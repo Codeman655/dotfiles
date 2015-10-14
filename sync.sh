@@ -31,8 +31,6 @@ if [[ $1 = "-pull" ]] ; then
 
 elif  [[ $1 = "-push" ]] ; then 
     #oh-my-zsh
-    cp -r $HOME/.git $HOME
-
     cp .zshrc $HOME
     cp .bashrc $HOME
 

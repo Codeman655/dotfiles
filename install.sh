@@ -12,6 +12,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 #Install all brew packages
 brew install task taskd tasksh
+brew install tmux
 brew install the_silver_searcher
 brew install pandoc
 brew install openssl
