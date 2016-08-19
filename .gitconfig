@@ -1,6 +1,6 @@
 [user]
-  name = chricrai
-  email = chricrai@cisco.com
+  name = Chris Craig
+  email = codeman655@gmail.com
 [alias]
   vlog = log --graph --date-order --date=relative --pretty=format:\"%C(white)%h: %Cgreen - %an - %C(cyan)%ar: %C(red)%d%Creset%n%s%n\" --color
   hist = log --graph --date-order --date=relative --pretty=format:\"%C(white)%h: %Cgreen - %an - %C(cyan)%ar: %C(red)%d%Creset%n%s%n\" --color -p current..master
