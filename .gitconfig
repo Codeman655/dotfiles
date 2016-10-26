@@ -11,7 +11,7 @@
   editor = /Users/chricrai/bin/vim
 [github]
   user = chricrai
-  host = github.asig.cisco.com
+  host = github.com
 [ghi]
   editor = vim
   token = !security find-internet-password -a chricrai -s github.com -l 'ghi token' -w
